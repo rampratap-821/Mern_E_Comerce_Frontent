@@ -15,6 +15,11 @@ const AppState = (props) => {
     const [reload, setReload] = useState(false)
     const[userAddress,setUserAddress] = useState([])
     const[userOrders,setUserOrders] = useState([])
+    const[allOrders,setAllUserOrders] = useState([])
+    const[allUsers,setAllUsers] = useState([])
+    const[register,setRegister] = useState([])
+
+
 
 
 
@@ -40,10 +45,13 @@ const AppState = (props) => {
             getUserCart()
              getUserAddress()
              getUserOrders()
+             getAllOrders()
+             getAllUsers()
+             
         }
 
         fetchProduct()
-       
+       getUsers()
 
     }, [token, reload])
 
@@ -309,7 +317,88 @@ const AppState = (props) => {
 
     }
 
-    console.log("Orders", userOrders)
+    // get All Orders
+    const getAllOrders = async () => {
+        const api = await axios.get(`${url}/payment/allOrders`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            withCredentials: true
+        })
+
+        //   console.log(" allOrders",api.data)
+      
+         setAllUserOrders(api.data)
+         
+       
+        
+
+
+    }
+
+// get ek user ke total orders
+   const getAllUsers = async () => {
+        const api = await axios.get(`${url}/payment/ekUserKeTotalOrders`, {
+            headers: {
+                "Content-Type": "application/json",
+                 "Authorization": `Bearer ${token}`
+            },
+            withCredentials: true
+        })
+      
+    //  console.log("getallUsersOrders",api.data)
+      setAllUsers(api.data)
+
+    }
+
+//  add to product
+   const addToProduct = async ( title, description, price, category, qty, imgSrc) => {
+        const api = await axios.post(`${url}/product/add`,{ title, description, price, category, qty, imgSrc}, {
+            headers: {
+                "Content-Type": "application/json"
+            },
+            withCredentials: true
+        })
+      
+    //   console.log("addToProduct",api.data)
+      return api.data
+     
+
+    }
+
+  //  Delete Product
+   const DeleteProduct = async (id) => {
+        const api = await axios.delete(`${url}/product/${id}`,{
+            headers: {
+                "Content-Type": "application/json"
+            },
+            withCredentials: true
+        })
+      
+       console.log("addToProduct",api.data.message)
+       setReload(!reload)
+      
+     
+
+    }
+
+// get all Users
+   const getUsers = async () => {
+        const api = await axios.get(`${url}/user/all`, {
+            headers: {
+                "Content-Type": "application/json"
+            },  
+            withCredentials: true
+        })
+      
+    //  console.log("getUser",api.data)
+   
+      setRegister(api.data)
+     
+
+    }
+
+
     return (
         <AppContext.Provider value={{
             products,
@@ -329,7 +418,14 @@ const AppState = (props) => {
             clearCart,
             shippingAddress,
             userAddress,
-            userOrders
+            userOrders,
+            allOrders,
+            allUsers,
+            addToProduct,
+            DeleteProduct,
+            reload,
+            setReload,
+            register
         }}>
             {props.children}
         </AppContext.Provider>

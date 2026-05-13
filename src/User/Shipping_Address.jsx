@@ -181,7 +181,6 @@
 // export default Shipping_Address;
 
 
-
 import React, { useContext, useState } from "react";
 import AppContext from "../Context/AppContext";
 import { useNavigate } from "react-router-dom";
@@ -238,16 +237,17 @@ const Shipping_Address = () => {
     };
 
     return (
-        <div className="min-h-screen bg-black text-white px-4 py-8">
+        /* Changed bg-black/text-white to bg-white/text-gray-900 */
+        <div className="min-h-screen bg-white text-gray-900 px-4 py-8">
 
-            {/* Form Section */}
+            {/* Form Section - Added light border and soft shadow */}
             <form
                 onSubmit={submitForm}
-                className="max-w-6xl mx-auto bg-gray-900 border border-gray-700 rounded-3xl p-5 md:p-10 shadow-2xl"
+                className="max-w-6xl mx-auto border border-gray-200 rounded-3xl p-5 md:p-10 shadow-xl bg-white"
             >
 
-                {/* Heading */}
-                <h1 className="text-3xl md:text-5xl font-bold text-center mb-10">
+                {/* Heading - Changed to dark for contrast on white */}
+                <h1 className="text-3xl md:text-5xl font-bold text-center mb-10 text-gray-800">
                     Shipping Address
                 </h1>
 
@@ -256,7 +256,7 @@ const Shipping_Address = () => {
 
                     {/* Full Name */}
                     <div>
-                        <label className="block mb-2 text-sm font-semibold text-gray-300">
+                        <label className="block mb-2 text-sm font-semibold text-gray-600">
                             Full Name
                         </label>
 
@@ -266,14 +266,15 @@ const Shipping_Address = () => {
                             value={formData.fullName}
                             onChange={onchangeHandler}
                             placeholder="Enter your full name"
-                            className="w-full bg-black border border-gray-600 rounded-xl px-4 py-3 text-white outline-none focus:border-yellow-400 transition"
+                            /* Changed input bg to white and border to light gray */
+                            className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-gray-900 outline-none focus:border-yellow-500 transition"
                             required
                         />
                     </div>
 
                     {/* Country */}
                     <div>
-                        <label className="block mb-2 text-sm font-semibold text-gray-300">
+                        <label className="block mb-2 text-sm font-semibold text-gray-600">
                             Country
                         </label>
 
@@ -283,14 +284,14 @@ const Shipping_Address = () => {
                             value={formData.country}
                             onChange={onchangeHandler}
                             placeholder="Enter country"
-                            className="w-full bg-black border border-gray-600 rounded-xl px-4 py-3 text-white outline-none focus:border-yellow-400 transition"
+                            className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-gray-900 outline-none focus:border-yellow-500 transition"
                             required
                         />
                     </div>
 
                     {/* State */}
                     <div>
-                        <label className="block mb-2 text-sm font-semibold text-gray-300">
+                        <label className="block mb-2 text-sm font-semibold text-gray-600">
                             State
                         </label>
 
@@ -300,14 +301,14 @@ const Shipping_Address = () => {
                             value={formData.state}
                             onChange={onchangeHandler}
                             placeholder="Enter state"
-                            className="w-full bg-black border border-gray-600 rounded-xl px-4 py-3 text-white outline-none focus:border-yellow-400 transition"
+                            className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-gray-900 outline-none focus:border-yellow-500 transition"
                             required
                         />
                     </div>
 
                     {/* City */}
                     <div>
-                        <label className="block mb-2 text-sm font-semibold text-gray-300">
+                        <label className="block mb-2 text-sm font-semibold text-gray-600">
                             City
                         </label>
 
@@ -317,14 +318,14 @@ const Shipping_Address = () => {
                             value={formData.city}
                             onChange={onchangeHandler}
                             placeholder="Enter city"
-                            className="w-full bg-black border border-gray-600 rounded-xl px-4 py-3 text-white outline-none focus:border-yellow-400 transition"
+                            className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-gray-900 outline-none focus:border-yellow-500 transition"
                             required
                         />
                     </div>
 
                     {/* Pincode */}
                     <div>
-                        <label className="block mb-2 text-sm font-semibold text-gray-300">
+                        <label className="block mb-2 text-sm font-semibold text-gray-600">
                             Pincode
                         </label>
 
@@ -334,14 +335,14 @@ const Shipping_Address = () => {
                             value={formData.pincode}
                             onChange={onchangeHandler}
                             placeholder="Enter pincode"
-                            className="w-full bg-black border border-gray-600 rounded-xl px-4 py-3 text-white outline-none focus:border-yellow-400 transition"
+                            className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-gray-900 outline-none focus:border-yellow-500 transition"
                             required
                         />
                     </div>
 
                     {/* Phone Number */}
                     <div>
-                        <label className="block mb-2 text-sm font-semibold text-gray-300">
+                        <label className="block mb-2 text-sm font-semibold text-gray-600">
                             Phone Number
                         </label>
 
@@ -351,7 +352,7 @@ const Shipping_Address = () => {
                             value={formData.phoneNumber}
                             onChange={onchangeHandler}
                             placeholder="Enter phone number"
-                            className="w-full bg-black border border-gray-600 rounded-xl px-4 py-3 text-white outline-none focus:border-yellow-400 transition"
+                            className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-gray-900 outline-none focus:border-yellow-500 transition"
                             required
                         />
                     </div>
@@ -360,7 +361,7 @@ const Shipping_Address = () => {
 
                 {/* Address */}
                 <div className="mt-7">
-                    <label className="block mb-2 text-sm font-semibold text-gray-300">
+                    <label className="block mb-2 text-sm font-semibold text-gray-600">
                         AddressLine / Nearby
                     </label>
 
@@ -370,7 +371,7 @@ const Shipping_Address = () => {
                         onChange={onchangeHandler}
                         rows="4"
                         placeholder="Enter full address"
-                        className="w-full bg-black border border-gray-600 rounded-2xl px-4 py-3 text-white outline-none focus:border-yellow-400 transition resize-none"
+                        className="w-full bg-white border border-gray-300 rounded-2xl px-4 py-3 text-gray-900 outline-none focus:border-yellow-500 transition resize-none"
                         required
                     ></textarea>
                 </div>
@@ -380,7 +381,7 @@ const Shipping_Address = () => {
 
                     <button
                         type="submit"
-                        className="w-full md:w-72 bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 rounded-xl transition duration-300 shadow-lg"
+                        className="w-full md:w-72 bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 rounded-xl transition duration-300 shadow-md"
                     >
                         Save & Continue
                     </button>
@@ -390,7 +391,7 @@ const Shipping_Address = () => {
                             <button
                                 type="button"
                                 onClick={() => navigate("/checkout")}
-                                className="w-full md:w-72 bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition duration-300 shadow-lg"
+                                className="w-full md:w-72 bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition duration-300 shadow-md"
                             >
                                 Use Old Address
                             </button>

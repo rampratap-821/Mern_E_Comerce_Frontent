@@ -15,10 +15,18 @@ import Shipping_Address from "./User/Shipping_Address";
 import Checkout from "./User/Checkout";
 import OrderConfirmation from "./User/OrderConfirmation";
 import Footer from "./User/Footer";
+import AddToCart from "./Admin/AddToProduct";
+import GoToHOme from "./Admin/GoToHOme";
+import AllOrders from "./Admin/AllOrders";
+import AllUsers from "./Admin/AllUsers";
+import EditProduct from "./Admin/EditProduct";
+import ScrollToTop from "./User/SrcollTop";
+import FooterSeUpperCard from "./Component/Product/FooterSeUpperCard";
 const App = () => {
 
   return (
     <Router>
+      <ScrollToTop/>
       <Navbar />
       <ToastContainer />
       <Routes>
@@ -32,7 +40,13 @@ const App = () => {
         <Route path="/shipping_Address" element={<Shipping_Address/>} />
         <Route path="/checkout" element={<Checkout/>} />
         <Route path="/orderConfirmation" element={<OrderConfirmation/>} />
+        <Route path="/goToHome" element={<GoToHOme/>} />
+        <Route path="/addToProduct" element={<AddToCart/>} />
+        <Route path="/allOrders" element={<AllOrders/>} />
+        <Route path="/allUers" element={<AllUsers/>} />
+        <Route path="/editProduct/:id" element={<EditProduct/>} />
       </Routes>
+      <FooterSeUpperCard/>
       <Footer/>
     </Router>
   )

@@ -18,8 +18,8 @@ import OnlineShopping from "../assets/OnlineShopping.json"
 const Footer = () => {
 
   return (
-
-    <footer className="bg-gradient-to-r from-orange-500 via-orange-600 to-amber-500 text-white mt-16 border-t border-orange-300/20">
+    <>
+    <footer className="bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 text-white mt-16 border-t border-orange-300/20">
 
       {/* Top Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
@@ -225,6 +225,7 @@ const Footer = () => {
       </div>
 
     </footer>
+    </>
 
   )
 }

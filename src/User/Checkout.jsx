@@ -306,7 +306,7 @@ const Chekout = () => {
   }
 
   return (
-    <div className='min-h-screen bg-black text-white px-3 md:px-8 py-6'>
+    <div className='min-h-screen  text-white px-3 md:px-8 py-6'>
 
       {/* Heading */}
       <h1 className='text-3xl md:text-5xl font-bold text-center mb-10'>
@@ -317,7 +317,7 @@ const Chekout = () => {
       <div className='grid lg:grid-cols-3 gap-8'>
 
         {/* Product Section */}
-        <div className='lg:col-span-2 bg-gray-900 border border-gray-700 rounded-3xl p-4 md:p-6 shadow-2xl'>
+        <div className='lg:col-span-2  border border-gray-700 rounded-3xl p-4 md:p-6 shadow-2xl'>
 
           <h2 className='text-2xl font-bold mb-6 text-yellow-400'>
             Product Details
@@ -419,7 +419,7 @@ const Chekout = () => {
         </div>
 
         {/* Shipping Address */}
-        <div className='bg-gray-900 border border-gray-700 rounded-3xl p-5 md:p-6 shadow-2xl h-fit'>
+        <div className=' border border-gray-700 rounded-3xl p-5 md:p-6 shadow-2xl h-fit'>
 
           <h2 className='text-2xl font-bold text-yellow-400 mb-6'>
             Shipping Address

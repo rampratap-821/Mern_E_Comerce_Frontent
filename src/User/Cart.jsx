@@ -128,7 +128,7 @@ const Cart = () => {
     }, [cart])
 
     return (
-        <div className='min-h-screen bg-black text-white px-3 md:px-10 py-6'>
+        <div className='min-h-screen  text-white px-3 md:px-10 py-6'>
 
             {/* Top Section */}
             <div className='text-center mb-8'>
@@ -159,7 +159,7 @@ const Cart = () => {
 
                         <div
                             key={product._id}
-                            className='bg-gray-900 border border-gray-700 rounded-2xl p-4 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xl hover:scale-[1.01] duration-300'
+                            className='bg-black border border-gray-700 rounded-2xl p-4 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xl hover:scale-[1.01] duration-300'
                         >
 
                             {/* Image */}

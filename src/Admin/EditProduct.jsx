@@ -62,7 +62,7 @@ const EditProduct = () => {
 
     <div className="min-h-screen  flex items-center justify-center px-4 py-10">
 
-      <div className="w-full max-w-3xl border border-yellow-400 rounded-2xl p-8 bg-black shadow-[0_0_20px_rgba(255,255,0,0.2)]">
+      <div className="w-full max-w-3xl border border-yellow-400 rounded-2xl p-8 bg-gradient-to-br from-blue-950 via-blue-700 to-cyan-500 shadow-[0_0_20px_rgba(255,255,0,0.2)]">
 
         {/* Heading */}
         <h1 className="text-white text-5xl font-bold text-center mb-10">
@@ -129,19 +129,15 @@ const EditProduct = () => {
               Category
             </label>
 
-            <select
+            <input
               required
               name="category"
               value={addProduct.category}
               onChange={handleChange}
               className="w-full bg-[#1c2128] border border-gray-500 rounded-lg px-4 py-3 text-gray-300 outline-none focus:border-yellow-400"
             >
-              <option value="">--Select Category--</option>
-              <option value="Laptop">Laptop</option>
-              <option value="Mobile">Mobile</option>
-              <option value="Watch">Camera</option>
-              <option value="Headphone">Headphone</option>
-            </select>
+             
+            </input>
           </div>
 
           {/* Image URL */}

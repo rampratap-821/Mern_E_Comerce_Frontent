@@ -381,7 +381,7 @@ const Shipping_Address = () => {
 
                     <button
                         type="submit"
-                        className="w-full md:w-72 bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 rounded-xl transition duration-300 shadow-md"
+                        className="w-full md:w-72 bg-gradient-to-br from-blue-950 via-blue-700 to-cyan-500  text-black font-bold py-3 rounded-xl transition duration-300 shadow-md"
                     >
                         Save & Continue
                     </button>

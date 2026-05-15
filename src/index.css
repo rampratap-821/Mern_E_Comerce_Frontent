@@ -6,3 +6,21 @@ body{
     background-color:white;
     color: white;
 }
+
+/* index.css या App.css में add करें */
+
+/* For Chrome, Safari and Edge */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* For Firefox */
+html {
+    scrollbar-width: none;
+}
+
+/* For IE */
+body {
+    -ms-overflow-style: none;
+}

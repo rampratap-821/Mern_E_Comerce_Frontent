@@ -50,8 +50,6 @@
 
 // export default ProductDetails
 
-
-
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
@@ -89,10 +87,10 @@ const ProductDetails = () => {
     return (
         <>
 
-            <div className='min-h-screen bg-black text-white px-4 md:px-10 py-10'>
+            <div className='min-h-screen bg-white text-black px-4 md:px-10 py-10'>
 
                 {/* Main Section */}
-                <div className='  p-6 md:p-10 flex flex-col md:flex-row items-center gap-10 shadow-lg'>
+                <div className='bg-gray-100 border border-black/10 rounded-3xl p-6 md:p-10 flex flex-col md:flex-row items-center gap-10 shadow-2xl'>
 
                     {/* Product Image */}
                     <div className='w-full md:w-1/2 flex justify-center'>
@@ -100,7 +98,7 @@ const ProductDetails = () => {
                         <img
                             src={products.imgSrc}
                             alt="product"
-                            className='w-full max-w-[350px] h-[350px] object-cover rounded-2xl p-2'
+                            className='w-full max-w-[350px] h-[350px] object-cover rounded-2xl p-2 bg-white shadow-lg'
                         />
 
                     </div>
@@ -108,30 +106,30 @@ const ProductDetails = () => {
                     {/* Product Details */}
                     <div className='w-full md:w-1/2 text-center md:text-left'>
 
-                        <h1 className='text-3xl md:text-5xl font-bold text-orange-400 mb-5'>
+                        <h1 className='text-3xl md:text-5xl font-extrabold text-black mb-5'>
                             {products.title}
                         </h1>
 
-                        <p className='text-gray-300 text-base md:text-lg leading-7 mb-5'>
+                        <p className='text-gray-700 text-base md:text-lg leading-7 mb-5 font-medium'>
                             {products.description}
                         </p>
 
-                        <h1 className='text-3xl font-bold text-white mb-4'>
+                        <h1 className='text-3xl font-extrabold text-black mb-4'>
                             ₹ {products.price}
                         </h1>
 
-                        <h1 className='text-lg md:text-xl text-orange-300 mb-8'>
-                            Category : {products.category}
+                        <h1 className='text-lg md:text-xl text-black font-bold mb-8'>
+                            Category : <span className='text-orange-500'>{products.category}</span>
                         </h1>
 
                         {/* Buttons */}
                         <div className='flex flex-col sm:flex-row gap-4 justify-center md:justify-start'>
 
-                            <button className='py-3 px-8 bg-orange-500 hover:bg-orange-600 rounded-lg text-white font-semibold transition'>
+                            <button className='py-3 px-8 bg-black hover:bg-gray-900 rounded-lg text-white font-semibold transition duration-300'>
                                 Buy Now
                             </button>
 
-                            <button className='py-3 px-8 bg-yellow-500 hover:bg-yellow-600 rounded-lg text-black font-semibold transition'>
+                            <button className='py-3 px-8 bg-orange-500 hover:bg-orange-600 rounded-lg text-white font-semibold transition duration-300'>
                                 Add to cart
                             </button>
 

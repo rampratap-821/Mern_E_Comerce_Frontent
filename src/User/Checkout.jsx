@@ -195,7 +195,6 @@
 // export default Chekout;
 
 
-
 import React, { useContext, useEffect, useState } from 'react'
 import AppContext from '../Context/AppContext'
 import { useNavigate } from 'react-router-dom'
@@ -306,20 +305,20 @@ const Chekout = () => {
   }
 
   return (
-    <div className='min-h-screen  text-white px-3 md:px-8 py-6'>
+    <div className='min-h-screen bg-gray-100 px-3 md:px-8 py-6'>
 
       {/* Heading */}
-      <h1 className='text-3xl md:text-5xl font-bold text-center mb-10'>
+      <h1 className='text-3xl md:text-5xl font-bold text-center mb-10 bg-gradient-to-r from-blue-700 via-blue-500 to-sky-400 bg-clip-text text-transparent'>
         Order Summary
       </h1>
 
       {/* Main Section */}
       <div className='grid lg:grid-cols-3 gap-8'>
 
-        {/* Product Section */}
-        <div className='lg:col-span-2  border border-gray-700 rounded-3xl p-4 md:p-6 shadow-2xl'>
+        {/* Product Section - White Background */}
+        <div className='lg:col-span-2 bg-white border border-gray-300 rounded-3xl p-4 md:p-6 shadow-2xl'>
 
-          <h2 className='text-2xl font-bold mb-6 text-yellow-400'>
+          <h2 className='text-2xl font-bold mb-6 bg-gradient-to-r from-blue-700 via-blue-500 to-sky-400 bg-clip-text text-transparent'>
             Product Details
           </h2>
 
@@ -330,7 +329,7 @@ const Chekout = () => {
 
                 <div
                   key={product._id}
-                  className='bg-black border border-gray-700 rounded-2xl p-4 flex flex-col md:flex-row gap-5 items-center justify-between'
+                  className='bg-gray-50 border border-gray-200 rounded-2xl p-4 flex flex-col md:flex-row gap-5 items-center justify-between'
                 >
 
                   {/* Image */}
@@ -345,15 +344,15 @@ const Chekout = () => {
                   {/* Product Info */}
                   <div className='flex-1 text-center md:text-left'>
 
-                    <h2 className='text-xl font-bold mb-3'>
+                    <h2 className='text-xl font-bold mb-3 text-black'>
                       {product.title}
                     </h2>
 
-                    <p className='text-green-400 text-lg mb-2'>
+                    <p className='text-green-600 text-lg mb-2'>
                       ₹ {product.price}
                     </p>
 
-                    <p className='text-yellow-400 font-semibold'>
+                    <p className='text-yellow-600 font-semibold'>
                       Qty : {product.qty}
                     </p>
 
@@ -363,14 +362,14 @@ const Chekout = () => {
                   <div className='flex flex-wrap justify-center gap-3'>
 
                     <button
-                      className='bg-red-600 hover:bg-red-700 p-3 rounded-xl transition'
+                      className='bg-red-600 hover:bg-red-700 text-white p-3 rounded-xl transition'
                       onClick={() => decreaseQty(product.productId, 1)}
                     >
                       <GrSubtractCircle />
                     </button>
 
                     <button
-                      className='bg-green-600 hover:bg-green-700 p-3 rounded-xl transition'
+                      className='bg-green-600 hover:bg-green-700 text-white p-3 rounded-xl transition'
                       onClick={() =>
                         addToCart(
                           product?.productId,
@@ -385,7 +384,7 @@ const Chekout = () => {
                     </button>
 
                     <button
-                      className='bg-red-500 hover:bg-red-600 p-3 rounded-xl transition'
+                      className='bg-red-500 hover:bg-red-600 text-white p-3 rounded-xl transition'
                       onClick={() => {
                         if (confirm("are you sure ,want to from cart")) {
                           removeFromCart(product?.productId)
@@ -404,13 +403,13 @@ const Chekout = () => {
           </div>
 
           {/* Total */}
-          <div className='mt-8 border-t border-gray-700 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4'>
+          <div className='mt-8 border-t border-gray-300 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4'>
 
             <div className='bg-yellow-400 text-black px-6 py-3 rounded-xl font-bold w-full sm:w-auto text-center'>
               Total Qty : {qty}
             </div>
 
-            <div className='bg-green-600 px-6 py-3 rounded-xl font-bold w-full sm:w-auto text-center'>
+            <div className='bg-gradient-to-r from-blue-700 via-blue-500 to-sky-400 text-white px-6 py-3 rounded-xl font-bold w-full sm:w-auto text-center'>
               Total Price : ₹ {price}
             </div>
 
@@ -418,47 +417,47 @@ const Chekout = () => {
 
         </div>
 
-        {/* Shipping Address */}
-        <div className=' border border-gray-700 rounded-3xl p-5 md:p-6 shadow-2xl h-fit'>
+        {/* Shipping Address - White Background */}
+        <div className='bg-white border border-gray-300 rounded-3xl p-5 md:p-6 shadow-2xl h-fit'>
 
-          <h2 className='text-2xl font-bold text-yellow-400 mb-6'>
+          <h2 className='text-2xl font-bold mb-6 bg-gradient-to-r from-blue-700 via-blue-500 to-sky-400 bg-clip-text text-transparent'>
             Shipping Address
           </h2>
 
-          <div className='space-y-4 text-gray-300'>
+          <div className='space-y-4 text-gray-700'>
 
-            <div className='bg-black p-4 rounded-xl border border-gray-700'>
-              <span className='font-bold text-white'>Name :</span>{" "}
+            <div className='bg-gray-50 p-4 rounded-xl border border-gray-200'>
+              <span className='font-bold text-black'>Name :</span>{" "}
               {userAddress.fullName}
             </div>
 
-            <div className='bg-black p-4 rounded-xl border border-gray-700'>
-              <span className='font-bold text-white'>Address :</span>{" "}
+            <div className='bg-gray-50 p-4 rounded-xl border border-gray-200'>
+              <span className='font-bold text-black'>Address :</span>{" "}
               {userAddress.address}
             </div>
 
-            <div className='bg-black p-4 rounded-xl border border-gray-700'>
-              <span className='font-bold text-white'>City :</span>{" "}
+            <div className='bg-gray-50 p-4 rounded-xl border border-gray-200'>
+              <span className='font-bold text-black'>City :</span>{" "}
               {userAddress.city}
             </div>
 
-            <div className='bg-black p-4 rounded-xl border border-gray-700'>
-              <span className='font-bold text-white'>State :</span>{" "}
+            <div className='bg-gray-50 p-4 rounded-xl border border-gray-200'>
+              <span className='font-bold text-black'>State :</span>{" "}
               {userAddress.state}
             </div>
 
-            <div className='bg-black p-4 rounded-xl border border-gray-700'>
-              <span className='font-bold text-white'>Country :</span>{" "}
+            <div className='bg-gray-50 p-4 rounded-xl border border-gray-200'>
+              <span className='font-bold text-black'>Country :</span>{" "}
               {userAddress.country}
             </div>
 
-            <div className='bg-black p-4 rounded-xl border border-gray-700'>
-              <span className='font-bold text-white'>Phone :</span>{" "}
+            <div className='bg-gray-50 p-4 rounded-xl border border-gray-200'>
+              <span className='font-bold text-black'>Phone :</span>{" "}
               {userAddress.phoneNumber}
             </div>
 
-            <div className='bg-black p-4 rounded-xl border border-gray-700'>
-              <span className='font-bold text-white'>Pincode :</span>{" "}
+            <div className='bg-gray-50 p-4 rounded-xl border border-gray-200'>
+              <span className='font-bold text-black'>Pincode :</span>{" "}
               {userAddress.pincode}
             </div>
 
@@ -472,7 +471,7 @@ const Chekout = () => {
       <div className='flex justify-center mt-10'>
 
         <button
-          className='w-full md:w-80 bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-4 rounded-2xl text-lg transition duration-300 shadow-xl'
+          className='w-full md:w-80 bg-gradient-to-r from-blue-700 via-blue-500 to-sky-400 text-white font-bold py-4 rounded-2xl text-lg transition duration-300 shadow-xl hover:shadow-2xl hover:scale-105'
           onClick={handlePayment}
         >
           Proceed To Pay

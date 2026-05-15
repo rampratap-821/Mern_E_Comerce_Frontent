@@ -13,13 +13,13 @@ import {
 
 import { Link } from 'react-router-dom'
 import Lottie from "lottie-react"
-import OnlineShopping from "../assets/OnlineShopping.json"
+import OnlineShopping from "../assets/Online shopping.json"
 
 const Footer = () => {
 
   return (
     <>
-    <footer className="bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 text-white mt-16 border-t border-orange-300/20">
+    <footer className="bg-gradient-to-br from-blue-950 via-blue-700 to-cyan-500  border-t border-orange-300/20">
 
       {/* Top Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
